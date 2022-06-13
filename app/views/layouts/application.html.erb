@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, minimal-ui, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  </head>
+
+  <body>
+    <%= render 'shared/flashes' %>
+
+    <%= yield %>
+
+    <%# <% if back_arrow_devise? && !current_page?(:unauthenticated_root)%>
+      <%# <%= render 'shared/back-arrow-devise' %>
+    <%# <% end %>
+    <%# <% if back_arrow? && %>
+      <%# <%= render 'shared/back-arrow' %>
+    <%# <% end %>
+    <% if white_bottom_navbar? %>
+      <%= render 'shared/white-bottom-navbar' %>
+    <% elsif collection_bottom_navbar? %>
+      <%= render 'shared/collection-bottom-navbar' %>
+    <% elsif dark_show_bottom_navbar? %>
+      <%= render 'shared/dark-show-bottom-navbar' %>
+    <% elsif dark_bottom_navbar? %>
+      <%= render 'shared/dark-bottom-navbar' %>
+    <% end %>
+
+  </body>
+</html>

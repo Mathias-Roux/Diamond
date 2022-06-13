@@ -1,0 +1,26 @@
+.my-form {
+  margin-top: -1.5rem;
+  white-space: nowrap;
+
+}
+.my-form-button {
+  border-radius: 0 !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  color: white;
+  background-color: black;
+  margin-left: 0px;
+  border: none;
+  left: -4px;
+  top: -1px;
+  height: 38px !important;
+}
+.my-form-input {
+  display: inline-block;
+  border-style: none;
+  width: 100%;
+  border-radius: 0 !important;
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  height: 38px !important;
+}

@@ -1,0 +1,122 @@
+// Specific CSS for your home-page
+.home {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1513746347121-4cfd77c7dc37?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80');
+  background-size: cover;
+  overflow: hidden;
+  min-height: 100vh;
+  padding-top: 170px;
+  position: relative;
+  a {
+
+      display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+}
+
+.home-title {
+  font-family: $font-roboto;
+  font-size: 28px;
+  color: #F5F4EB;
+  margin-top: 78px;
+}
+
+.home-user-title {
+  font-family: $font-roboto;
+  font-size: 28px;
+  color: #F5F4EB;
+  margin-top: 26px;
+}
+
+.home-scan-title {
+  font-family: $font-roboto;
+  font-size: 18px;
+  color: #F5F4EB;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+.home-subtitle {
+  font-family: $font-roboto;
+  font-weight: 400;
+  font-size: 19px;
+  color: #F5F4EB;
+  margin-top: 25px;
+}
+
+.home-separate {
+  font-size: 6px;
+  color: #F5F4EB;
+  i {
+    margin: 2px;
+    opacity: 0.7;
+  }
+}
+
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-navbar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  list-style: none;
+}
+
+.home-form {
+  margin-top: 170px !important;
+}
+
+.home-form-search {
+  margin-top: 5px !important;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.btn-search-home {
+  border-radius: 0 !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  height: 34px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 18px !important;
+  border: none !important;
+  font-weight: 700 !important;
+  width: 60px !important;
+  color: gainsboro !important;
+  background-color: grey !important;
+}
+
+.home-input {
+  border-radius: 0 !important;
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  height: 34px !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  color: $main-green !important;
+}
+
+.btn-scan {
+  font-size: 30px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50% !important;
+  background-color: $mid-gold !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  i {
+    color: $main-green;
+  }
+}
+
+.card-vinyl {
+  padding-bottom: 49px;
+}

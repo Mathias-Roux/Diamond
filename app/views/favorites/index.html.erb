@@ -1,0 +1,42 @@
+<%= render 'shared/loader_search' %>
+<div class="m-5"></div>
+
+<div class="d-flex justify-content-between align-items-center m-3">
+  <div class="avatar-navbar">
+    <%= render 'shared/avatar_navbar' %>
+  </div>
+  <h2 class="font-weight-bold header-search-h2"><span class="vinyl-count"><%= @favorites.count %></span> vinyls in your wishlist</h2>
+</div>
+
+<ul class="nav justify-content-between p-3">
+  <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Collection', user_vinyls_path, style:"color:#c2c2c2;" %></li>
+  <li class="nav-item font-weight-bold text-hidden"><%= link_to 'Suggestions', suggestions_path, id:"btn-search", style:"color:#c2c2c2;" %></li>
+  <li class="nav-item font-weight-bold">Wishlist</li>
+</ul>
+
+<div class="card-vinyl">
+  <div class="ml-3 mr-3 mb-3 content-search" style="padding-bottom : 45px;">
+    <% @favorites.reverse_each do |favorite| %>
+
+      <div class="d-flex card-search py-4 g-0">
+        <%= link_to favorite_path(favorite), style: "width:280px" do %>
+          <div class="container-img">
+            <img class="photo-sizing" src="<%= favorite.vinyl.cover_url %>">
+          </div>
+          <div class="container-infos w-100 px-3 py-2 d-flex flex-column justify-content-between">
+            <div>
+              <h6 class="card-text title-sizing text-white"><%= favorite.vinyl.title %></h6>
+              <p class="card-text text-sizing text-white"><%= favorite.vinyl.artist.name %></p>
+            </div>
+            <p class="card-text genre-color"><small><i class="fas fa-music"></i> <%= favorite.vinyl.genre.name %></small></p>
+          </div>
+        <% end %>
+          <div class="h-75 pr-3 pl-3 pb-3 pt-2 link-card justify-content-between align-items-center d-flex flex-column">
+            <%= link_to icon('fas', 'plus'), create_from_favorite_favorite_path(favorite), method: :post %>
+            <%= link_to icon('fas', 'trash-alt'), favorite_path(favorite), method: :delete, remote: true, class:"my-trash text-white", id:'trash' %>
+          </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>

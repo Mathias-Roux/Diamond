@@ -1,0 +1,65 @@
+.music-kind-view{
+  width: 100%;
+  height: 18vh;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(graph_holder.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  .count{
+    background-color: $sand;
+    position: relative;
+    z-index: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 1.5px 1.5px 0 3px $main-green;
+  }
+  p{
+    color: $main-green;
+    hyphens : none;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.card-vinyl{
+  background-color: $main-green;
+  a{
+    text-decoration: none;
+  }
+}
+
+.search-bar{
+  display: flex;
+  align-items: center;
+}
+
+.photo-sizing{
+  height: 128px;
+  width: 128px;
+}
+
+.genre-color{
+  color: $gold;
+}
+.title-sizing{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.text-sizing{
+  font-size: 13px;
+}
+
+.counter {
+  position: absolute;
+  color: $mid-gold;
+  font-weight: 700;
+  left: 50%;
+  top: -25px;
+  transform: translateX(-50%);
+}

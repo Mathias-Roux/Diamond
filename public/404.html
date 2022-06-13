@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sorry, the page you were looking for doesn't exist (404)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body{
+      max-width: 375px;
+      min-height: 812px;
+      background-image: url("error_background.jpeg");
+      background-position: 65%;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%;
+      margin: 0px;
+    }
+
+    .content{
+      color: white;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-top: 25%;
+      overflow: hidden;
+    }
+
+    .content h1{
+      font-size: 330px;
+      margin: 0%;
+      opacity: 0.5;
+    }
+
+    .content h3{
+      padding-left: 50px;
+      padding-right: 50px;
+      text-align: center;
+      margin-top: 7em;
+      opacity: 0.9;
+    }
+
+    .content a{
+      width: 75%;
+      background-color: #D4AF47;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      text-decoration: none;
+      color: #E5E7E9;
+      border-radius: 10px;
+      font-size: 20px;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/404.html -->
+  <div class="content">
+    <h1>404</h1>
+    <h3>Sorry, the page you were looking for doesn't exist :(</h3>
+    <a href="/">Go back to homepage</a>
+  </div>
+</body>
+</html>

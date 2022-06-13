@@ -1,0 +1,36 @@
+.header-search {
+  height: 40px;
+}
+
+.header-search-h2 {
+  display: flex;
+  justify-content: start;
+  align-items: baseline;
+  font-size: 20px !important;
+}
+
+.content-search {
+  min-height: calc(100vh - 132px);
+}
+
+.card-search a {
+  display: flex !important;
+}
+
+.card-search {
+  position: relative;
+  border-bottom: solid 2px #364f50;
+}
+
+.link-card {
+  position: absolute;
+  right: 0 !important;
+}
+
+.vinyl-count {
+  font-weight: 700;
+  color: $mid-gold;
+  font-size: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+}

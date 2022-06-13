@@ -1,0 +1,66 @@
+<%= render 'shared/loader_search' %>
+<div class="m-5">
+</div>
+
+<div class="d-flex justify-content-between align-items-center m-3">
+  <div class="avatar-navbar">
+    <%= render 'shared/avatar_navbar' %>
+  </div>
+  <h2 class="font-weight-bold header-search-h2"><span class="vinyl-count"><%= @user_vinyls.count %></span> vinyls in your collection</h2>
+</div>
+
+<ul class="nav justify-content-between p-3">
+  <li class="nav-item font-weight-bold">Collection</li>
+  <li class="nav-item text-hidden"><%= link_to 'Suggestions', suggestions_path, id:"btn-search", style:"color:#c2c2c2;" %></li>
+  <li class="nav-item text-hidden"><%= link_to 'Wishlist', favorites_path, style:"color:#c2c2c2;" %></li>
+</ul>
+
+<div class="music-kind-view">
+    <% if @third_genre %>
+      <% genre_first = Genre.find(@hash_top_vinyl[0][0]) %>
+      <% genre_second = Genre.find(@hash_top_vinyl[1][0]) %>
+      <% genre_third = Genre.find(@hash_top_vinyl[2][0]) %>
+      <div class="d-flex align-items-end">
+        <div class="count text-center p-1" style="min-width: 50px; height: 50px;"><p><%= genre_second.name %></p><div class="counter font-weight-bold"><%= @hash_top_vinyl[1][1].count  %></div></div>
+        <div class="count text-center p-1" style="min-width: 50px; height: 75px;"><p><%= genre_first.name %></p><div class="counter font-weight-bold"><%= @hash_top_vinyl[0][1].count  %></div></div>
+        <div class="count text-center p-1" style="min-width: 50px; height: 25px;"><p><%= genre_third.name %></p><div class="counter font-weight-bold"><%= @hash_top_vinyl[2][1].count  %></div></div>
+      </div>
+    <% end %>
+</div>
+
+<div class="card-vinyl overflow-hidden">
+  <div class="search-bar">
+    <%= form_tag user_vinyls_path, method: "GET", class:"home-form-search w-100 d-flex justify-content-center" do %>
+      <%= text_field_tag :query,
+          params[:query],
+          required: false,
+          class: "form-control home-input",
+          placeholder: "Nevermind..."
+      %>
+    <%= button_tag(type: "submit",id: "btn-search", class: "btn-mid-gold btn-search-home") do %>
+      <i class="fas fa-search"></i>
+    <% end %>
+    <% end %>
+  </div>
+  <div class="m-3 content-search" style="padding-bottom : 45px;">
+    <% @user_vinyls.reverse_each do |user_vinyl| %>
+      <div class="d-flex card-search py-4 g-0">
+        <%= link_to user_vinyl_path(user_vinyl) do %>
+          <div class="container-img">
+            <img class="photo-sizing" src="<%= user_vinyl.vinyl.cover_url %>">
+          </div>
+          <div class="container-infos w-100 px-3 py-2 d-flex flex-column justify-content-between">
+            <div>
+              <h6 class="card-text title-sizing text-white"><%= user_vinyl.vinyl.title %></h6>
+              <p class="card-text text-sizing text-white"><%= user_vinyl.vinyl.artist.name %></p>
+            </div>
+            <p class="card-text genre-color"><small><i class="fas fa-music"></i> <%= user_vinyl.vinyl.genre.name %></small></p>
+          </div>
+          <div class="h-75 p-3 link-card justify-content-end align-items-center d-flex flex-column">
+            <%= link_to icon('fas', 'trash-alt'),  user_vinyl_path(user_vinyl), method: :delete, remote: true, class:"my-trash text-white", id:'trash' %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

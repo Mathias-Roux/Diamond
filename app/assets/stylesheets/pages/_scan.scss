@@ -1,0 +1,24 @@
+#scan-btn-search {
+  display: none !important;
+}
+
+#scan-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  padding: 2rem;
+  background-color: $main-green;
+  color: $mid-gold;
+  text-align: center;
+  padding-top:10px;
+  img {
+    top: 12px;
+    position: relative;
+    height: 80px;
+    width: auto;
+    margin: 1rem;
+  }
+}
+#form-barcode {
+  display: none !important;
+}
